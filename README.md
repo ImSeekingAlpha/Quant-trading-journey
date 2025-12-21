@@ -36,8 +36,7 @@ Quant-trading-journey/
 │   ├── Basic quantitative analysis.ipynb
 │   └── Testing quant_utils.ipynb
 ├── phase-1/          # Fundamentals: IC, factors, basic backtests
-│   ├── 01_ic_analysis.ipynb
-│   └── 02_factor_comparison.ipynb
+│   └──  01_Simple_alpha_factor_and_IC.ipynb
 ├── src/quant_utils/  # Reusable utilities
 │   ├── perf.py
 │   └── data.py
