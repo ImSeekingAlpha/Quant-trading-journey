@@ -48,13 +48,15 @@ def download_data(
         data_dir = os.path.join(project_root, "data")
         os.makedirs(data_dir, exist_ok=True)
 
-        if pickle_name is None:
-            ticker_str = tickers if isinstance(tickers, str) else "+".join([
-                t.replace("^", "").replace("=", "").replace("-", "") for t in tickers
-            ])
-            date_str = period or (f"{start[:4]}to{end[:4]}" if start and end else "custom")
-            safe_name = f"{ticker_str}_{date_str}_{interval}.pkl"
-            pickle_name = os.path.join(data_dir, safe_name)
+    if pickle_name is None:
+        if len(tickers) <= 10:
+            ticker_str = "_".join([t.replace('-','_')[:4] for t in tickers])  
+        else:
+            ticker_str = f"tickers_{len(tickers)}t"  
+
+        date_str = period or (f"{start[:4]}to{end[:4]}" if start and end else "custom")
+        safe_name = f"{ticker_str}_{date_str}_{interval}.pkl"
+        pickle_name = os.path.join(data_dir, safe_name)
 
         full_path = os.path.abspath(pickle_name)
         prices.to_pickle(pickle_name)
