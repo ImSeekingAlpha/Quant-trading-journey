@@ -39,7 +39,7 @@ Comparison of 5+ fundamental and technical factors using the same IC and alpha�
 
 
 ## 📁 Project Structure
-```
+```ruby
 Quant-trading-journey/
 ├── phase-0/                               # Initial setup + exploration
 │ ├── Basic quantitative analysis.ipynb
@@ -76,16 +76,17 @@ Quant-trading-journey/
 
 ## 🚦 Quick Start
 Clone repository
+```bash
 git clone https://github.com/ImSeekingAlpha/Quant-trading-journey.git
 cd Quant-trading-journey
 
 Install dependencies
-pip install -e . # Makes 'quant_utils' importable
-pip install -e ".[full]" # Also install every necessary library
+pip install -e .           # Makes 'quant_utils' importable
+pip install -e ".[full]"   # Also install every necessary library
 
 Run notebooks
 jupyter lab
-
+```
 ---
 
 ## 📬 Contact
