@@ -37,18 +37,21 @@ Comparison of 5+ fundamental and technical factors using the same IC and alpha�
 
 ---
 
+
 ## 📁 Project Structure
+```
 Quant-trading-journey/
-├── phase-0/ # Initial setup + exploration
+├── phase-0/                               # Initial setup + exploration
 │ ├── Basic quantitative analysis.ipynb
 │ └── Testing quant_utils.ipynb
-├── phase-1/ # Fundamentals: IC, factors, basic backtests
+├── phase-1/                               #  Fundamentals: IC, factors, basic backtests
 │ ├── 01_Simple_alpha_factor_and_IC.ipynb
 │ └── 02_alpha_decay.ipynb
-├── src/quant_utils/ # Reusable utilities
+├── src/quant_utils/                       # Reusable utilities
 │ ├── perf.py
 │ └── data.py
 └── data/ # Downloaded data (not in repo)
+```
 
 ---
 
