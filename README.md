@@ -1,10 +1,9 @@
 #  Quant Trading Journey
 
-**Goal:** Develop quantitative strategies with real alpha and execute them in live trading.
-
-**Current Focus:** Phase 1 - Fundamentals  
-**Latest Achievement:** IC analysis + alpha decay for 12‑month momentum  
-**Next Milestone:** Cross-sectional momentum strategy backtested
+**Goal:** Develop quantitative strategies with real alpha and execute them in live trading. \
+**Current Focus:** Phase 1 - Fundamentals  \
+**Latest Achievement:** Multi-factor analysis \
+**Next Milestone:** Utils update with IC pipelines and factor long-short backtest. 
 
 ---
 
@@ -23,7 +22,15 @@ Extension of the IC pipeline to study how the predictive power of the same facto
 - IC histograms for key horizons (21d, 126d) to inspect the shape of the distribution
 
 3️⃣ **Multi-Factor Comparison (Planned)**  
-Comparison of 5+ fundamental and technical factors using the same IC and alpha‑decay workflow.
+Cross-sectional Spearman IC comparison of three fundamental factors (Book-to-Market, Size, ROE) vs 21-day forward returns on aligned universe:  
+- Data pipeline: Dual forward-fill for quarterly fundamentals (resample D → reindex price.index → ffill)  
+- Universe construction: Index intersection across factors/returns + 30-ticker minimum for IC stability  
+- Rank transformation: `.rank(pct=True)` for scale-invariant Uniform[0,1] factors  
+- IC metrics: Mean IC, std, T-stat per factor over 978 common trading days (2021-2025)  
+- Factor hierarchy: Statistical ranking + economic interpretation (value premium, size effect, quality trap)
+
+⏳  **Utils update with IC pipelines (Planned)**\
+⏳  **Factor Long-Short (Planned)**
 
 ---
 
@@ -46,7 +53,8 @@ Quant-trading-journey/
 │ └── Testing quant_utils.ipynb
 ├── phase-1/                               #  Fundamentals: IC, factors, basic backtests
 │ ├── 01_Simple_alpha_factor_and_IC.ipynb
-│ └── 02_alpha_decay.ipynb
+│ └── 02_Alpha_decay.ipynb
+│ └── 03_Alpha_factor_exploration.ipynb
 ├── src/quant_utils/                       # Reusable utilities
 │ ├── perf.py
 │ └── data.py
@@ -69,8 +77,7 @@ Quant-trading-journey/
 
 ## 📚 Main Resources
 
-- **Core book:** *Machine Learning for Algorithmic Trading* - Stefan Jansen (Ch 1-8) [file:1]  
-- **Supplement:** *Algorithmic Trading* - Ernie Chan (Ch 2, 4, 7) [file:1]
+- **Core book:** *Machine Learning for Algorithmic Trading* - Stefan Jansen (Ch 1-8)
 
 ---
 
@@ -83,9 +90,6 @@ cd Quant-trading-journey
 Install dependencies
 pip install -e .           # Makes 'quant_utils' importable
 pip install -e ".[full]"   # Also install every necessary library
-
-Run notebooks
-jupyter lab
 ```
 ---
 
