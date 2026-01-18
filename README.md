@@ -2,7 +2,7 @@
 
 **Goal:** Develop quantitative strategies with real alpha and execute them in live trading. \
 **Current Focus:** Phase 1 - Fundamentals  \
-**Latest Achievement:** Multi-factor analysis \
+**Latest Achievement:** Momentum 12-1 factor + long-short backtest (Jan 2026) \
 **Next Milestone:** Utils update with IC pipelines and factor long-short backtest. 
 
 ---
@@ -21,7 +21,7 @@ Extension of the IC pipeline to study how the predictive power of the same facto
 - Alpha‑decay plot: mean IC vs horizon  
 - IC histograms for key horizons (21d, 126d) to inspect the shape of the distribution
 
-3️⃣ **Multi-Factor Comparison (Planned)**  
+3️⃣ **Multi-Factor Comparison**  
 Cross-sectional Spearman IC comparison of three fundamental factors (Book-to-Market, Size, ROE) vs 21-day forward returns on aligned universe:  
 - Data pipeline: Dual forward-fill for quarterly fundamentals (resample D → reindex price.index → ffill)  
 - Universe construction: Index intersection across factors/returns + 30-ticker minimum for IC stability  
@@ -55,6 +55,7 @@ Quant-trading-journey/
 │ ├── 01_Simple_alpha_factor_and_IC.ipynb
 │ └── 02_Alpha_decay.ipynb
 │ └── 03_Alpha_factor_exploration.ipynb
+│ └── 04_Long_short_strategy.ipynb
 ├── src/quant_utils/                       # Reusable utilities
 │ ├── perf.py
 │ └── data.py
@@ -63,15 +64,23 @@ Quant-trading-journey/
 
 ---
 
-## 🎯 Roadmap
+## 🎯 Roadmap Progress
 
-| Phase      | Objective                       | Status        |
-|-----------|---------------------------------|---------------|
-| **Phase 1** | Master factor analysis          | 🟡 In progress |
-| **Phase 2** | First complete strategy         | ⚪ Pending     |
-| **Phase 3** | 24/7 paper trading              | ⚪ Pending     |
-| **Phase 4** | Diversification + validation    | ⚪ Pending     |
-| **Phase 5** | **Live trading with real capital** | ⚪ Pending |
+| Phase | Objective | Status |
+|-------|-----------|--------|
+| **Phase 1**<br>**Fundamentals** | Master Jansen + first backtest | ✅ Complete |
+| | Universe construction (liquidity/coverage) | ✅ |
+| | IC analysis + factor engineering | ✅ |
+| | Momentum 12-1 long-short (Sharpe -0.03) | ✅ |
+| **Phase 2**<br>**Rigorous Backtesting** | Multi-factor Sharpe >1.0 | 🟡 Starting |
+| | QuantConnect mastery (3 strategies) | ⏳ |
+| | 15 original features | ⏳ |
+| | XGBoost walk-forward (DD ≤20%) | ⏳ |
+| **Phase 3**<br>**Specialization** | Secondary strategy (Stat Arb track) | ⚪ Pending |
+| | Cointegration + pairs trading | ⚪ |
+| | GARCH volatility models | ⚪ |
+| **Phase 4**<br>**Paper → Live** | Live trading €5k-15k | ⚪ Pending |
+| | 16 weeks paper trading | ⚪ |
 
 ---
 
@@ -99,5 +108,7 @@ Feedback or collaboration? Open an [Issue](https://github.com/ImSeekingAlpha/Qua
 
 ---
 
-**Last updated:** December 2025
+Last updated: January 18, 2026
+
+Phase 1 Complete → Phase 2 Next 🚀
 
