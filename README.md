@@ -29,8 +29,19 @@ Cross-sectional Spearman IC comparison of three fundamental factors (Book-to-Mar
 - IC metrics: Mean IC, std, T-stat per factor over 978 common trading days (2021-2025)  
 - Factor hierarchy: Statistical ranking + economic interpretation (value premium, size effect, quality trap)
 
-⏳  **Utils update with IC pipelines (Planned)**\
-⏳  **Factor Long-Short (Planned)**
+4️⃣ **Momentum 12-1 Long-Short Portfolio**
+- Canonical 12-1 month momentum factor (Jansen Ch. 3) on S&P 500 universe (2006-2026):
+- S&P 500 universe construction: Dollar volume >$1M + 80% coverage → ~400 tickers  
+- NaN diagnostics: nan_summary() (Tsay/De Prado) → Leading/internal/trailing decomposition  
+- Multi-period geometric returns (1-12m) + 1% winsorization outlier protection  
+- IC validation: Spearman rank vs 1m forward returns → IC=0.0113, T-stat=1.09  
+- Dollar-neutral portfolio: Equal-weight top/bottom 10% quantile ranks  
+- Vectorized backtest: Point-in-time signals (xs(level=1) + shift(1)) → 230 rebalances  
+- Performance: Sharpe -0.027, MDD -44.6%, Return -24.3% (validates post-GFC decay)
+
+⏳ **Utils update with IC pipelines (Planned)**
+⏳ **QuantConnect SMA(50,200) + Momentum/MeanRev/Factor (Phase 2 start)**
+
 
 ---
 
