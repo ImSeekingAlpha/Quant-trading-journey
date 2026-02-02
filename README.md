@@ -39,7 +39,7 @@ Cross-sectional Spearman IC comparison of three fundamental factors (Book-to-Mar
 - Vectorized backtest: Point-in-time signals (xs(level=1) + shift(1)) → 230 rebalances  
 - Performance: Sharpe -0.027, MDD -44.6%, Return -24.3% (validates post-GFC decay)
 
-⏳ **Utils update with IC pipelines (Planned)**
+⏳ **Utils update with IC pipelines (Planned)** \
 ⏳ **QuantConnect SMA(50,200) + Momentum/MeanRev/Factor (Phase 2 start)**
 
 
