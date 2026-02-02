@@ -39,8 +39,24 @@ Cross-sectional Spearman IC comparison of three fundamental factors (Book-to-Mar
 - Vectorized backtest: Point-in-time signals (xs(level=1) + shift(1)) → 230 rebalances  
 - Performance: Sharpe -0.027, MDD -44.6%, Return -24.3% (validates post-GFC decay)
 
+5️⃣ **RSI(14) Mean-Reversion Strategy**  
+Daily mean-reversion signal on S&P 500 universe (2003-2026):
+- RSI < 30 oversold detection with Wilder's smoothing (no look-ahead bias)  
+- Universe construction: Dollar volume >$1M + 80% coverage → ~400 tickers  
+- NaN handling: Leading/internal/trailing diagnostics + max 10-day gap tolerance  
+- Winsorization: 1%/99% percentile clipping for gap-risk management (Sharpe +21%)  
+- IC validation: 5-horizon analysis (1d-21d) → IC = -0.0089 to -0.0210 (inverse relationship validates reversion)  
+- Equal-weight daily rebalance with monthly aggregation  
+- Performance: **Sharpe 0.856, Win Rate 78.6%, Profit Factor 3.01, MDD 48.5%**  
+- Technical implementation: Point-in-time RSI (shift(1)), rolling 30-day Sharpe monitoring
+
 ⏳ **Utils update with IC pipelines (Planned)** \
-⏳ **QuantConnect SMA(50,200) + Momentum/MeanRev/Factor (Phase 2 start)**
+⏳ **Phase 2: Multi-Factor XGBoost (In Progress)**  
+- 15+ original features (momentum + mean-reversion + volatility cross-sections)  
+- Walk-forward 5-year train / 6-month test validation  
+- Target: Sharpe > 1.0, Max DD < 20%, Profit Factor > 1.5  
+- Expected completion: March 2026
+
 
 
 ---
@@ -49,8 +65,9 @@ Cross-sectional Spearman IC comparison of three fundamental factors (Book-to-Mar
 
 **Python:** pandas, numpy, scipy, statsmodels  
 **Data:** yfinance, pandas-datareader  
-**Visualization:** matplotlib, seaborn  
-**Backtesting:** (coming soon: vectorbt or backtrader)  
+**Visualization:** matplotlib, seaborn, vetorbt
+**Backtesting:** vectorbt
+**ML:** (coming soon: XGBoost, scikit-learn)
 **Deployment:** (coming soon: ib_insync for paper trading)
 
 ---
@@ -67,6 +84,8 @@ Quant-trading-journey/
 │ └── 02_Alpha_decay.ipynb
 │ └── 03_Alpha_factor_exploration.ipynb
 │ └── 04_Long_short_strategy.ipynb
+├── phase-2/                               #  Fundamentals: Backtesting and strategy building
+│ ├── 01_RSI_mean_reversion_strategy.ipynb
 ├── src/quant_utils/                       # Reusable utilities
 │ ├── perf.py
 │ └── data.py
@@ -119,7 +138,8 @@ Feedback or collaboration? Open an [Issue](https://github.com/ImSeekingAlpha/Qua
 
 ---
 
-Last updated: January 18, 2026
+Last updated: February 2, 2026
 
-Phase 1 Complete → Phase 2 Next 🚀
+Phase 1 Complete 
+Phase 2 Next (in progress)
 
