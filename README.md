@@ -1,9 +1,9 @@
 #  Quant Trading Journey
 
 **Goal:** Develop quantitative strategies with real alpha and execute them in live trading. \
-**Current Focus:** Phase 1 - Fundamentals  \
-**Latest Achievement:** Momentum 12-1 factor + long-short backtest (Jan 2026) \
-**Next Milestone:** Utils update with IC pipelines and factor long-short backtest. 
+**Current Focus:** Phase 2 - Rigorous Backtesting  \
+**Latest Achievement:** RSI mean-reversion + Momentum 12-1 strategies complete with IC validation (Feb 2026) \
+**Next Milestone:** Multi-factor XGBoost model with walk-forward validation (Sharpe > 1.0, Phase 2) \
 
 ---
 
